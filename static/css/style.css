@@ -1,0 +1,63 @@
+.border-rounded {
+    border-radius: 2rem;
+}
+
+.icon-box {
+    display: flex;
+    justify-content: center;
+    background: rgb(244, 248, 255);
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+}
+
+.bg-darker {
+    background: #3b3a3b;
+}
+
+.btn-custom-predict {
+    padding: 1.5rem 3rem;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+}
+
+.bg-overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255 255 255 / 97%), rgba(44 147 253 / 57%)), url(../images/background-4.jpg);
+    background-size: cover;
+}
+
+.info-box {
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.bg-lightblue {
+    background: rgba(44, 147, 253, 0.1);
+}
+
+.bg-lightgreen {
+    background: rgba(39, 174, 96, 0.1);
+}
+
+.bg-lightred {
+    background: rgba(231, 76, 60, 0.1);
+}
+
+.bg-lightpurple {
+    background: rgba(142, 68, 173, 0.1);
+}
+
+.bg-lightyellow {
+    background: rgba(241, 196, 15, 0.1);
+}
+
+th {
+    text-align: left;
+}
+
+table.dataframe.table {
+    border: none;
+}

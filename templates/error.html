@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <h1>Error</h1>
+    <p>{{ error_message }}</p>
+    <!-- You can style the error message as needed using CSS -->
+    <a href="/" class="btn btn-primary">Go back and try again</a>
+</div>
+{% endblock %}

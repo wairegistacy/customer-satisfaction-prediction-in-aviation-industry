@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<div class="analysis-top-bg container pb-5">
+    <div class="row">
+        <div class="col p-5">
+            <h1 class="mb-4 text-success">Great news! {{count_satisfied}} passengers will be
+                satisfied </h1>
+            <p>Our commitment to providing exceptional service will result in {{ count_satisfied }}
+                satisfied passengers who will have experienced travel like never before. We take immense pride in
+                going the extra mile to ensure every journey is not just a trip, but a
+                memorable experience.</p>
+
+            <p>These {{ count_satisfied }} passengers will enjoy the comfort, convenience, and safety that our services
+                offer. Whether
+                it's our luxurious accommodations, attentive staff, or seamless travel arrangements, we're dedicated to
+                exceeding expectations.</p>
+
+            <a href="#analysis" class="btn btn-primary btn-custom-predict mt-4">View detailed breakdown</a>
+        </div>
+
+        <div class="col">
+            <img src="{{ url_for('static', filename='images/happy-customers.gif') }}" alt="" class="img-fluid">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+
+            <img src="{{ url_for('static', filename='images/sad.gif') }}" alt="" class="img-fluid">
+
+        </div>
+
+        <div class="col p-5">
+            <h1 class="mb-4 text-danger">Unfortunately, {{count_dissatisfied}} passengers will be neutral or
+                dissatisfied </h1>
+            <p>In our journey to provide top-notch service,
+                we've proactively identified that the expectations of {{count_dissatisfied}} passengers might not align
+                with their
+                definition of a great service. This revelation presents an opportunity for us to showcase our dedication
+                to turning the
+                tide in our favour.
+            </p>
+
+            <p>Our sophisticated customer prediction system that empowers us to foresee potential areas
+                of concern isn't just about identifying problems; it's about transforming challenges into catalysts for
+                growth. By pinpointing the root causes, we can take swift, targeted action to rectify issues and ensure
+                that future passengers experience the excellence we're known for.</p>
+
+            <a href="#recommendations" class="btn btn-danger btn-custom-predict mt-4">Take proactive measures</a>
+        </div>
+    </div>
+
+    <h1 class="text-center mt-4 mb-3" id="analysis">Analysis Summary</h1>
+
+    <div class="row">
+        <h5 class="mb-5">Breakdown by total passengers</h5>
+
+        <div class="col">
+            <div class="info-box bg-lightblue">
+                <h2>{{total_passengers}}</h2>
+                <p>Total Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightblue">
+                <h2>{{ count_satisfied }}</h2>
+                <p>Satisfied Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightblue">
+                <h2>{{ count_dissatisfied }}</h2>
+                <p>Unsatisfied Passengers</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="row mt-5">
+        <h5 class="mb-5">Breakdown by loyal passengers</h5>
+
+        <div class="col">
+            <div class="info-box bg-lightgreen">
+                <h2>20</h2>
+                <p>Total Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightgreen">
+                <h2>10</h2>
+                <p>Satisfied Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightgreen">
+                <h2>10</h2>
+                <p>Unsatisfied Passengers</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-5">
+        <h5 class="mb-5">Breakdown by disloyal passengers</h5>
+
+        <div class="col">
+            <div class="info-box bg-lightred">
+                <h2>25</h2>
+                <p>Total Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightred">
+                <h2>15</h2>
+                <p>Satisfied Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightred">
+                <h2>10</h2>
+                <p>Unsatisfied Passengers</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <h5 class="mb-5">Breakdown by business class passengers</h5>
+
+        <div class="col">
+            <div class="info-box bg-lightpurple">
+                <h2>25</h2>
+                <p>Total Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightpurple">
+                <h2>15</h2>
+                <p>Satisfied Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightpurple">
+                <h2>10</h2>
+                <p>Unsatisfied Passengers</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <h5 class="mb-5">Breakdown by economy class passengers</h5>
+
+        <div class="col">
+            <div class="info-box bg-lightyellow">
+                <h2>25</h2>
+                <p>Total Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightyellow">
+                <h2>15</h2>
+                <p>Satisfied Passengers</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="info-box bg-lightyellow">
+                <h2>10</h2>
+                <p>Unsatisfied Passengers</p>
+            </div>
+        </div>
+    </div> -->
+
+
+    <h1 class="text-center mt-5 mb-3" id="recommendations">Recommendations</h1>
+
+    <div class="row">
+        <div class="mb-4">
+            <h5>Food</h5>
+            <p>We can improve food service for the following customers</p>
+        </div>
+
+        <div class="col">
+            <div class="info-box bg-lightblue">
+                {{food_df|safe }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="mb-4">
+            <h5>Inflight services</h5>
+            {% if is_inflight %}
+            {% else %}
+            <p>We can improve Inflight services for the following passengers</p>
+            {% endif %}
+        </div>
+
+        <div class="col">
+            <div class="info-box bg-lightblue">
+                {% if is_inflight %}
+                <p>There is nothing to optimise here because all passengers will have a satisfaction score
+                    of at least
+                    <span class="fw-bold">4/5</span>
+                </p>
+                {% else %}
+                {{inflight_services_df|safe }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-5">
+        <div class="mb-4">
+            <h5>Cleanliness</h5>
+            {% if is_cleanliness %}
+            {% else %}
+            <p>We can improve cleanliness for the following passengers</p>
+            {% endif %}
+        </div>
+
+        <div class="col">
+            <div class="info-box bg-lightblue">
+                {% if is_cleanliness %}
+                <p>There is nothing to optimise here because all passengers will have a satisfaction score
+                    of at least
+                    <span class="fw-bold">4/5</span>
+                </p>
+                {% else %}
+                {{cleanliness_df|safe }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
